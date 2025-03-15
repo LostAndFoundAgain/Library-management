@@ -1,3 +1,5 @@
+package Common;
+
 public enum AdminOperationsEnum {
     ADD_ITEM,
     REMOVE_ITEM,

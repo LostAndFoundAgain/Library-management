@@ -6,22 +6,49 @@
 //    ✅ 5. Exit to Main Menu → Return to the main selection screen.
 
 
-
 package User;
 
-import Item.Item;
+import Common.Items;
+import Item.Book;
+import ItemCrud.BookCrud;
+
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Scanner;
+
+import static DataLayer.BookData.books;
+import static DataLayer.DvdData.Dvds;
+import static DataLayer.MagazineData.Magazines;
 
 public class Admin extends User {
+    Scanner sc = new Scanner(System.in);
 
     public Admin(String name) {
         super(name);
     }
 
-    public void addItem(Item item) {
+    public void addItem() {
+        System.out.println("Which choice would you like to add");
+        System.out.println(Arrays.toString(Items.values()));
+        String choice = sc.nextLine();
+        if (Objects.equals(choice, "BOOK")) {
+            System.out.println("Enter book name : ");
+            String bookName = sc.nextLine();
+            System.out.println("Enter publication date (YYYY-MM-DD): ");
+            String publicationDate = sc.nextLine();
+            System.out.println("Enter author name : ");
+            String author = sc.nextLine();
+            Book book = new Book(bookName, publicationDate, author);
+            BookCrud crud = new BookCrud();
+            crud.add(book);
+        } else if (Objects.equals(choice, "MAGAZINE")) {
 
+        } else if (Objects.equals(choice, "DVD")) {
+
+        }
     }
 
-    public void removeItem(String title) {
+    public void removeItem() {
 
     }
 
@@ -30,6 +57,12 @@ public class Admin extends User {
     }
 
     public void viewItems() {
-
+        System.out.println("Following items are present according to types....");
+        System.out.println("Books----------------");
+        System.out.println(books);
+        System.out.println("Magazines-------------");
+        System.out.println(Magazines);
+        System.out.println("DVDs-------------------");
+        System.out.println(Dvds);
     }
 }
