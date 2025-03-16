@@ -9,8 +9,10 @@ package User;
 
 import Common.Items;
 import Item.Book;
+import Item.Dvd;
 import Item.Magazine;
 import ItemCrud.BookCrud;
+import ItemCrud.DvdCrud;
 import ItemCrud.MagazineCrud;
 
 import java.util.Arrays;
@@ -52,6 +54,16 @@ public class Admin extends User {
             Magazine magazine = new Magazine(magazineName, publicationDate, author);
             MagazineCrud crud = new MagazineCrud();
             crud.add(magazine);
+        } else if (Objects.equals(choice, "DVD")) {
+            System.out.println("Enter dvd name : ");
+            String dvdName = sc.nextLine();
+            System.out.println("Enter publication date (YYYY-MM-DD): ");
+            String publicationDate = sc.nextLine();
+            System.out.println("Enter author name : ");
+            String author = sc.nextLine();
+            Dvd dvd = new Dvd(dvdName, publicationDate, author);
+            DvdCrud crud = new DvdCrud();
+            crud.add(dvd);
         }
     }
 
