@@ -21,19 +21,22 @@ public class Main {
         // Admin area
         if (Objects.equals(userSelection, "1")) {
             Admin user = new Admin(userName);
-            System.out.println("Select any operation");
-            System.out.println(Arrays.toString(AdminOperationsEnum.values()));
-            String operation = sc.nextLine();
-            if (Objects.equals(operation, "1")) {
-                user.addItem();
-            } else if (Objects.equals(operation, "2")) {
-                user.removeItem();
-            } else if (Objects.equals(operation, "3")) {
-                user.updateItem();
-            } else if (Objects.equals(operation, "4")) {
-                user.viewItems();
+            while (true) {
+                System.out.println("Select any operation");
+                System.out.println(Arrays.toString(AdminOperationsEnum.values()));
+                String operation = sc.nextLine();
+                if (Objects.equals(operation, "1")) {
+                    user.addItem();
+                } else if (Objects.equals(operation, "2")) {
+                    user.removeItem();
+                } else if (Objects.equals(operation, "3")) {
+                    user.updateItem();
+                } else if (Objects.equals(operation, "4")) {
+                    user.viewItems();
+                } else if (Objects.equals(operation, "5")) {
+                    break;
+                }
             }
-
         }
         // Member area
         else if (Objects.equals(userSelection, "2")) {
