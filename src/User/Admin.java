@@ -5,7 +5,6 @@
 //    ✅ 4. View All Items → See all books, DVDs, and magazines in the library.
 //    ✅ 5. Exit to Main Menu → Return to the main selection screen.
 
-
 package User;
 
 import Common.Items;
@@ -28,7 +27,7 @@ public class Admin extends User {
     }
 
     public void addItem() {
-        System.out.println("Which choice would you like to add");
+        System.out.println("Which item would you like to add");
         System.out.println(Arrays.toString(Items.values()));
         String choice = sc.nextLine();
         if (Objects.equals(choice, "BOOK")) {
@@ -41,19 +40,31 @@ public class Admin extends User {
             Book book = new Book(bookName, publicationDate, author);
             BookCrud crud = new BookCrud();
             crud.add(book);
-        } else if (Objects.equals(choice, "MAGAZINE")) {
-
-        } else if (Objects.equals(choice, "DVD")) {
-
         }
     }
 
     public void removeItem() {
-
+        System.out.println("Which item would you like to remove");
+        System.out.println(Arrays.toString(Items.values()));
+        String choice = sc.nextLine();
+        if (Objects.equals(choice, "BOOK")) {
+            System.out.println("Enter title of the book");
+            String bookName = sc.nextLine();
+            BookCrud crud = new BookCrud();
+            crud.remove(bookName);
+        }
     }
 
     public void updateItem() {
-
+        System.out.println("Which item would you like to update");
+        System.out.println(Arrays.toString(Items.values()));
+        String choice = sc.nextLine();
+        if (Objects.equals(choice, "BOOK")) {
+            System.out.println("Enter title of the book");
+            String bookName = sc.nextLine();
+            BookCrud crud = new BookCrud();
+            crud.update(bookName);
+        }
     }
 
     public void viewItems() {

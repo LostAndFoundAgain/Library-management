@@ -1,6 +1,5 @@
 import Common.AdminOperationsEnum;
 import User.Admin;
-import User.Member;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -42,7 +41,7 @@ public class Main {
             System.out.println("1. Premium");
             System.out.println("2. Regular");
             String membership = sc.nextLine();
-            if(Objects.equals(membership, "1")){
+            if (Objects.equals(membership, "1")) {
 
             }
         } else {

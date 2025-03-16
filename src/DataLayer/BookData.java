@@ -2,8 +2,8 @@ package DataLayer;
 
 import Item.Book;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class BookData {
-    public static List<Book>books;
+    public static ArrayList<Book> books = new ArrayList<>();
 }

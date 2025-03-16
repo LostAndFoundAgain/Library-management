@@ -8,8 +8,8 @@ public abstract class Item {
     private final UUID itemId;
     private final Items itemType;
     private final String name;
-    private final String author;
-    private final String publicationDate;
+    private String author;
+    private String publicationDate;
     private boolean borrowed;
 
     public Item(Items itemType, String name, String publicationDate, String author) {
@@ -19,6 +19,42 @@ public abstract class Item {
         this.publicationDate = publicationDate;
         this.author = author;
         this.borrowed = false;
+    }
+
+    public UUID getItemId() {
+        return itemId;
+    }
+
+    public Items getItemType() {
+        return itemType;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPublicationDate() {
+        return publicationDate;
+    }
+
+    public void setPublicationDate(String publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public boolean isBorrowed() {
+        return borrowed;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        this.borrowed = borrowed;
     }
 
     @Override
