@@ -2,8 +2,8 @@ package DataLayer;
 
 import Item.Magazine;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class MagazineData {
-    public static List<Magazine>Magazines;
+    public static ArrayList<Magazine>magazines = new ArrayList<>();
 }

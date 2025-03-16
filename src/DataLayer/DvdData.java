@@ -2,8 +2,8 @@ package DataLayer;
 
 import Item.Dvd;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class DvdData {
-    public static List<Dvd>Dvds;
+    public static ArrayList<Dvd>dvds = new ArrayList<>();
 }
