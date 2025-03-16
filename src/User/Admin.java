@@ -76,6 +76,16 @@ public class Admin extends User {
             String bookName = sc.nextLine();
             BookCrud crud = new BookCrud();
             crud.remove(bookName);
+        } else if (Objects.equals(choice, "MAGAZINE")) {
+            System.out.println("Enter title of the magazine");
+            String magazineName = sc.nextLine();
+            MagazineCrud crud = new MagazineCrud();
+            crud.remove(magazineName);
+        } else if (Objects.equals(choice, "DVD")) {
+            System.out.println("Enter title of the dvd");
+            String dvdName = sc.nextLine();
+            DvdCrud crud = new DvdCrud();
+            crud.remove(dvdName);
         }
     }
 
