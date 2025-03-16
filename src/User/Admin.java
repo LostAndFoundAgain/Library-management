@@ -9,15 +9,17 @@ package User;
 
 import Common.Items;
 import Item.Book;
+import Item.Magazine;
 import ItemCrud.BookCrud;
+import ItemCrud.MagazineCrud;
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
 import static DataLayer.BookData.books;
-import static DataLayer.DvdData.Dvds;
-import static DataLayer.MagazineData.Magazines;
+import static DataLayer.DvdData.dvds;
+import static DataLayer.MagazineData.magazines;
 
 public class Admin extends User {
     Scanner sc = new Scanner(System.in);
@@ -40,6 +42,16 @@ public class Admin extends User {
             Book book = new Book(bookName, publicationDate, author);
             BookCrud crud = new BookCrud();
             crud.add(book);
+        } else if (Objects.equals(choice, "MAGAZINE")) {
+            System.out.println("Enter magazine name : ");
+            String magazineName = sc.nextLine();
+            System.out.println("Enter publication date (YYYY-MM-DD): ");
+            String publicationDate = sc.nextLine();
+            System.out.println("Enter author name : ");
+            String author = sc.nextLine();
+            Magazine magazine = new Magazine(magazineName, publicationDate, author);
+            MagazineCrud crud = new MagazineCrud();
+            crud.add(magazine);
         }
     }
 
@@ -72,8 +84,8 @@ public class Admin extends User {
         System.out.println("Books----------------");
         System.out.println(books);
         System.out.println("Magazines-------------");
-        System.out.println(Magazines);
+        System.out.println(magazines);
         System.out.println("DVDs-------------------");
-        System.out.println(Dvds);
+        System.out.println(dvds);
     }
 }
