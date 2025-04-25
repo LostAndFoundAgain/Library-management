@@ -1,5 +1,6 @@
 import Common.AdminOperationsEnum;
 import User.Admin;
+import User.Member;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -19,7 +20,7 @@ public class Main {
         String userSelection = sc.nextLine();
 
         // Admin area
-        if (Objects.equals(userSelection, "1")) {
+        if (Objects.equals(userSelection, "ADMIN")) {
             Admin user = new Admin(userName);
             while (true) {
                 System.out.println("Select any operation");
@@ -39,14 +40,9 @@ public class Main {
             }
         }
         // Member area
-        else if (Objects.equals(userSelection, "2")) {
-            System.out.println("Select membership");
-            System.out.println("1. Premium");
-            System.out.println("2. Regular");
-            String membership = sc.nextLine();
-            if (Objects.equals(membership, "1")) {
-
-            }
+        else if (Objects.equals(userSelection, "MEMBER")) {
+            Member member = new Member(userName, null);
+            member = member.login(userName);
         } else {
             System.out.println("Wrong selection. Please select again......");
         }

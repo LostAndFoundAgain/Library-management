@@ -1,7 +1,7 @@
 package Membership;
 
 public class Regular extends Membership {
-    Regular() {
+    public Regular() {
         super(5);
     }
 }
